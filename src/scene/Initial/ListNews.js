@@ -10,10 +10,10 @@ import {
   TouchableOpacity
 } from "react-native";
 
-const newsBgBig = require("../../../resources/newsBgBig.png");
-const category_BTN = require("../../../resources/categoryBTN.png");
-const shadow_IMAGE = require("../../../resources/bgShedow.png");
-const mock_IMAGE_BIG = require("../../../resources/mockImage.png");
+const newsBgBig = require("../../../resources/default.jpg");
+const category_BTN = require("../../../resources/default.jpg");
+const shadow_IMAGE = require("../../../resources/default.jpg");
+const mock_IMAGE_BIG = require("../../../resources/default.jpg");
 
 const styles = StyleSheet.create({
   mainListContainer:{

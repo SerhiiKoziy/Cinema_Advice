@@ -14,7 +14,7 @@ import {
   Text
 } from "react-native";
 import { TWO_STEEL, THREE_DENIM } from "../../../constants/index.js";
-const BTN_BLUE = require("../../../../resources/btn-blue.png");
+// const BTN_BLUE = require("../../../../resources/btn-blue.png");
 
 const styles = StyleSheet.create({
   mainListContainer:{
@@ -118,12 +118,12 @@ class MainCarousel extends Component {
     */
     const baseImageUrl = 'http://image.tmdb.org/t/p/w185/';
 
-    let source = {uri: `${baseImageUrl}${item.poster_path}`};
+    // let source = {uri: `${baseImageUrl}${item.poster_path}`};
     let width = Dimensions.get('window').width - 140;
     return (
       <View style={[styles.slide, {width: width}]}>
         <Text style={[styles.slideTitle, {width: width}]}>{item.title}</Text>
-        <Image source={source} style={styles.slideImage}/>
+        {/*<Image source={source} style={styles.slideImage}/>*/}
       </View>
     );
   }

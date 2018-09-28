@@ -7,7 +7,7 @@ import {
   View,
   TouchableOpacity
 } from "react-native";
-import LOGO_BANNER_IMAGE from "../../../resources/logo-new.png";
+import LOGO_BANNER_IMAGE from "../../../resources/default.jpg";
 
 export default class logoBanner extends PureComponent {
   render() {

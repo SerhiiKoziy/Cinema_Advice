@@ -55,7 +55,7 @@ export function getAllChannelsReducer(bestFilmsData){
 export function getAllGenres() {
     return (dispatch) => {
         ApiData.getAllGenres().then(data => {
-
+            console.log('111111 data.genres', data.genres)
             dispatch(getAllGenresReducer(data.genres));
         })
     }
