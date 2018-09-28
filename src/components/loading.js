@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { StyleSheet, Text, Image, View, Animated, Easing } from "react-native";
 
-import loading from "./../../resources/loading/loading.png";
+// import loading from "./../../resources/loading/loading.png";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,7 +41,7 @@ class Loading extends Component {
       <View style={styles.container}>
         <Animated.Image
           style={{ transform: [{ rotate: spin }] }}
-          source={loading}
+          // source={loading}
         />
         <Text
           style={{ textAlign: "center", color: "purple", fontWeight: "bold" }}

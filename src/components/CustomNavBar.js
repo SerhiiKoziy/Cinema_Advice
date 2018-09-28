@@ -2,9 +2,9 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 import React from 'react'
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import HandShake from '../components/HandShake.js';
-const NAV_INFO = require("../../resources/nav-info.png");
-const NAV_GROW = require("../../resources/nav-grow.png");
+// import HandShake from '../components/HandShake.js';
+// const NAV_INFO = require("../../resources/nav-info.png");
+// const NAV_GROW = require("../../resources/nav-grow.png");
 import { TWO_STEEL, BG_ACTIVE_COLOR_DESIGN, BG_COLOR_DESIGN } from "../constants/index.js";
 
 const styles = StyleSheet.create({
@@ -74,7 +74,7 @@ class CustomNavBar extends React.Component {
     return (
       <View style={styles.navBarLeft}>
         <View>
-          <HandShake/>
+          {/*<HandShake/>*/}
         </View>
         <TouchableOpacity
           style={styles.navBarItemLeft}
@@ -96,7 +96,8 @@ class CustomNavBar extends React.Component {
         <TouchableOpacity
           //onPress={() => Actions.startAuth()}
         >
-          <Image source={NAV_GROW} style={styles.navBarItemRightGrow} />
+          {/*<Image source={NAV_GROW} style={styles.navBarItemRightGrow} />*/}
+          1
         </TouchableOpacity>
       </View>
     )

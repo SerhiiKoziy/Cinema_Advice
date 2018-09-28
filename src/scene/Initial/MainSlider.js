@@ -10,7 +10,7 @@ import {
   ScrollView
 } from "react-native";
 
-const mock_IMAGE = require("../../../resources/mockChan.png");
+const mock_IMAGE = require("../../../resources/default.jpg");
 
 const styles = StyleSheet.create({
   mainListContainer:{

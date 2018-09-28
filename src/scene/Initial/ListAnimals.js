@@ -2,10 +2,10 @@ import React, { PureComponent } from "react";
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView} from "react-native";
 import FastImage from 'react-native-fast-image';
 
-const category_BTN = require("../../../resources/categoryBTN.png");
-const newsBgBig = require("../../../resources/newsBgBig.png");
-const shedow_IMAGE = require("../../../resources/bgShedow.png");
-const mock_IMAGE_BIG = require("../../../resources/mockImage.png");
+const category_BTN = require("../../../resources/default.jpg");
+const newsBgBig = require("../../../resources/default.jpg");
+const shedow_IMAGE = require("../../../resources/default.jpg");
+const mock_IMAGE_BIG = require("../../../resources/default.jpg");
 const resizeMode = 'center';
 
 const styles = StyleSheet.create({

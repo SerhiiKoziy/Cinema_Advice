@@ -15,9 +15,9 @@ const DATA = [
   { text: "Exmpl 3", src: "", key: "" }
 ];
 
-const empty_IMAGE = require("../../../resources/emptyButton.png");
-const category_BTN = require("../../../resources/categoryBTN.png");
-const shedow_IMAGE = require("../../../resources/bgShedow.png");
+const empty_IMAGE = require("../../../resources/default.jpg");
+const category_BTN = require("../../../resources/default.jpg");
+const shedow_IMAGE = require("../../../resources/default.jpg");
 
 const styles = StyleSheet.create({
   mainListContainer:{
