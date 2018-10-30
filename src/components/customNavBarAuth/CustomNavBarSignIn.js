@@ -2,7 +2,7 @@ import { Image, Platform, StyleSheet, TouchableOpacity, View, Text } from 'react
 import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import CLOSE_BTN from "../../../resources/nav-close.png";
+// import CLOSE_BTN from "../../../resources/nav-close.png";
 import { saveSelectRoute } from '../../actions/index.js';
 const styles = StyleSheet.create({
   container: {
@@ -74,7 +74,7 @@ class CustomNavBarSimple extends React.Component {
         onPress={() => Actions.startAuth()}
         style={[styles.navBarRight, { }]}
       >
-        <Image source = {CLOSE_BTN} style={styles.backImage}/>
+        {/*<Image source = {CLOSE_BTN} style={styles.backImage}/>*/}
       </TouchableOpacity>
     )
   }

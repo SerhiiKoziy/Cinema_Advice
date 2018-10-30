@@ -7,8 +7,8 @@ import { saveNameSelectTab } from './src/actions/index.js';
 const { store } = configureStore();
 
 import {View} from "react-native";
-import RoutingMainApplication from './src/routingMainApplication.js';
-//import RoutingAuth from './routingAuth.js';
+// import RoutingMainApplication from './src/routingMainApplication.js';
+import RoutingMainApplication from './src/routingAuth.js';
 
 import Actions from 'react-native-router-flux';
 
@@ -61,7 +61,7 @@ export default class App extends React.Component {
               // onTabPress = {this.onTabPress.bind(this)}
             />
           ) : (
-            <View></View>
+            <View>{'Please wait...'}</View>
           )
         }
 

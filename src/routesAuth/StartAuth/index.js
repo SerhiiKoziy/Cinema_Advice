@@ -1,75 +1,90 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import {Actions} from 'react-native-router-flux';
-import { saveSelectedChannel, saveNameSelectTab } from '../../actions';
+import Carousel from 'react-native-snap-carousel';
 
 import {
   StyleSheet,
   Image,
   View,
   TouchableOpacity,
-  TextInput,
-  Text
+  Text,
+  Dimensions, StatusBar
 } from "react-native";
 
-import LOGO_BANNER_IMAGE from "../../../resources/logo-new.png";
+import MAIN_BG from "../../../resources/images/bg.jpg";
+import Icon from "react-native-vector-icons/FontAwesome";
+
+const mockSliderText = [
+  {
+    title: 'Always current weather forecast'
+  },
+  {
+    title: 'Assistant who is always there'
+  },
+  {
+    title: 'Now! The weather is  predictable'
+  },
+];
 
 const styles = StyleSheet.create({
-  mainListContainer:{
+  mainSceneWrapper: {
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#FFF'
+    justifyContent: 'space-between',
   },
-  listContainer:{
-    flex: 1,
+  backdropImage: {
+    position: 'absolute',
     width: '100%',
-    maxWidth: 375,
-    flexDirection: "column",
-    paddingTop: 220,
-
-  },
-  containerScroll:{
-    flex: 1,
-    height: '100%',
-    maxWidth: 375,
-    width: '100%',
-    paddingRight: 30,
-    paddingLeft: 30,
+    zIndex: -1
   },
 
-  mainTitle:{
-    fontSize: 28,
-    lineHeight: 34,
-    color: "#13B7FF",
-    fontWeight: '700',
-    fontFamily: 'Arial',
-    textAlign: 'center'
+  logoImageWrapper: {
+    marginBottom: 40,
+    marginTop: 220,
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
-  variableTextWr:{
+
+  skipTextWrapper: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
     marginTop: 25,
   },
-  variableText:{
+  skipText: {
     fontSize: 20,
     lineHeight: 25,
-    color: "#13B7FF",
+    color: "#FFF",
     fontWeight: '500',
     fontFamily: 'Arial',
     textAlign: 'center'
   },
-  logoImageWr:{
-    position: 'absolute',
-    bottom: 10,
-    width: '100%',
-    height: 100,
-    flexDirection: 'row',
-    justifyContent: 'center'
+
+  //SLIDER
+  sliderWrapper: {
+    height: 240,
   },
-  logoImage:{
-    width: 160,
-    height: 80,
+  slide: {
+    height: 260,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    //backgroundColor: 'rgba(223,223,223,0.4)'
+    backgroundColor: '#FFF',
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+
+  },
+  slideTitle: {
+    color: "#1e1f49",
+    fontSize: 26,
+    textAlign: 'center',
+  },
+  slideImage: {
+    width: '100%',
     resizeMode: Image.resizeMode.contain,
   },
-
-
 });
 
 class Search extends Component {
@@ -79,36 +94,46 @@ class Search extends Component {
     };
   }
 
-  componentDidMount() {
-  }
-  render() {
+  renderItem ({item, index}) {
+    let width = Dimensions.get('window').width - 140;
     return (
-      <View style={{flex: 1, backgroundColor: '#FFF', alignItems: 'center'}}>
-        <View style={styles.containerScroll}>
-          <View style={styles.listContainer}>
+      <View style={styles.slide}>
+        <Text style={styles.slideTitle}>{item.title}</Text>
+        {/*<Image source={source} style={styles.slideImage}/>*/}
+      </View>
+    );
+  }
 
-            <Text style={styles.mainTitle}>Prototype profiles</Text>
-            <TouchableOpacity
-              style={styles.variableTextWr}
-              onPress={() => Actions.categories()}
-            >
-              <Text style={styles.variableText}>1. Kid edit Buddy</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.variableTextWr}
-              onPress={() => Actions.signIn()}
-            >
-              <Text style={styles.variableText}>2. Adult add profile</Text>
-            </TouchableOpacity>
-            <View style={styles.logoImageWr}>
-              <Image
-                source={LOGO_BANNER_IMAGE}
-                style={styles.logoImage}
-              />
-            </View>
+  render() {
 
+    let width = Dimensions.get('window').width;
+
+    return (
+      <View style={styles.mainSceneWrapper}>
+        <StatusBar barStyle="light-content" />
+        <Image source={MAIN_BG} style={styles.backdropImage} />
+          <View style={styles.logoImageWrapper}>
+            <Icon style={{color: '#FFF'}} name={"thermometer"} size={50}/>
           </View>
-        </View>
+
+          <TouchableOpacity
+            style={styles.skipTextWrapper}
+            onPress={() => Actions.signIn()}
+          >
+            <Text style={styles.skipText}>Skip</Text>
+          </TouchableOpacity>
+
+          <View style={styles.sliderWrapper}>
+            <Carousel
+              ref={c => {this._carousel = c}}
+              data={mockSliderText}
+              renderItem={this.renderItem}
+              sliderWidth={width}
+              itemWidth={width - 140}
+              loop = {false}
+              onSnapToItem={(index) => this.setState({ sliderActiveSlide: index })}
+            />
+          </View>
       </View>
     )
   }

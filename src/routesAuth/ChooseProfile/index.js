@@ -15,8 +15,7 @@ import {
 } from "react-native";
 import Loading from "../../components/loading.js";
 
-const BG_IMAGE = require("../../../resources/userBG.png");
-import { PNGS_DATA_FOR_CATEGORIES } from "../../constants/index.js";
+// const BG_IMAGE = require("../../../resources/userBG.png");
 
 const styles = StyleSheet.create({
   mainListContainer:{
@@ -173,8 +172,8 @@ class ChooseProfile extends Component {
                       onPress={() => this.chooseProfile({nameProfile: item.text, typeSettings: 'edit', imageCategory: item.source})}
                     >
                       <View style={styles.imageWr}>
-                        <Image source={BG_IMAGE} style={styles.itemImgBg}/>
-                        <Image source={item.source} style={styles.itemImg}/>
+                        {/*<Image source={BG_IMAGE} style={styles.itemImgBg}/>*/}
+                        {/*<Image source={item.source} style={styles.itemImg}/>*/}
                       </View>
                       <View style={styles.underButtonEdit}>
                         <Text style={styles.underText}>{item.text.slice(0, -1)}</Text>
@@ -187,7 +186,7 @@ class ChooseProfile extends Component {
                 onPress={() => this.chooseProfile({nameProfile: '', typeSettings: 'add'})}
               >
                 <View style={styles.imageWr}>
-                  <Image source={BG_IMAGE} style={styles.itemImgBg}/>
+                  {/*<Image source={BG_IMAGE} style={styles.itemImgBg}/>*/}
                 </View>
                 <View style={styles.underButtonEdit}>
                   <Text style={styles.underText}>Add a profile</Text>
