@@ -9,7 +9,7 @@ import {
   getTheme,
 } from 'react-native-material-kit';
 import { saveSelectRoute } from '../actions/index.js';
-const MENU_BG = require("../../resources/bottomMenuBg.png");
+// const MENU_BG = require("../../resources/bottomMenuBg.png");
 
 const styles = StyleSheet.create({
   tabBarWr:{
@@ -117,15 +117,15 @@ const styles = StyleSheet.create({
           onPressIn={() => this.handlePressIn(this.animatedValue0)}
           onPressOut={() => this.handlePressOut(this.animatedValue0)}
         >
-          <Animated.View style={[styles.button, animatedStyleFirst]}>
-            {
-              pageCurrent === 'home' ? (
-                <Image style={styles.itemImage} source={require("../../resources/nav-home-active.png")}/>
-              ) : (
-                <Image style={styles.itemImage} source={require("../../resources/nav-home.png")}/>
-              )
-            }
-          </Animated.View>
+          {/*<Animated.View style={[styles.button, animatedStyleFirst]}>*/}
+            {/*{*/}
+              {/*pageCurrent === 'home' ? (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-home-active.png")}/>*/}
+              {/*) : (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-home.png")}/>*/}
+              {/*)*/}
+            {/*}*/}
+          {/*</Animated.View>*/}
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -135,15 +135,15 @@ const styles = StyleSheet.create({
           onPressIn={() => this.handlePressIn(this.animatedValue1)}
           onPressOut={() => this.handlePressOut(this.animatedValue1)}
         >
-          <Animated.View style={[styles.button, animatedStyleSecond]}>
-            {
-              pageCurrent === 'channels' ? (
-                <Image style={styles.itemImage} source={require("../../resources/nav-menu-active.png")}/>
-              ) : (
-                <Image style={styles.itemImage} source={require("../../resources/nav-menu.png")}/>
-              )
-            }
-          </Animated.View>
+          {/*<Animated.View style={[styles.button, animatedStyleSecond]}>*/}
+            {/*{*/}
+              {/*pageCurrent === 'channels' ? (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-menu-active.png")}/>*/}
+              {/*) : (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-menu.png")}/>*/}
+              {/*)*/}
+            {/*}*/}
+          {/*</Animated.View>*/}
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -153,15 +153,15 @@ const styles = StyleSheet.create({
           onPressIn={() => this.handlePressIn(this.animatedValue2)}
           onPressOut={() => this.handlePressOut(this.animatedValue2)}
         >
-          <Animated.View style={[styles.button, animatedStyleThird]}>
-            {
-              pageCurrent === 'search' ? (
-                <Image style={styles.itemImage} source={require("../../resources/nav-search-active.png")}/>
-              ) : (
-                <Image style={styles.itemImage} source={require("../../resources/nav-search.png")}/>
-              )
-            }
-          </Animated.View>
+          {/*<Animated.View style={[styles.button, animatedStyleThird]}>*/}
+            {/*{*/}
+              {/*pageCurrent === 'search' ? (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-search-active.png")}/>*/}
+              {/*) : (*/}
+                {/*<Image style={styles.itemImage} source={require("../../resources/nav-search.png")}/>*/}
+              {/*)*/}
+            {/*}*/}
+          {/*</Animated.View>*/}
         </TouchableOpacity>
       </View>
     )

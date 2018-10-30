@@ -12,8 +12,8 @@ import {
   Text
 } from "react-native";
 
-const BG_IMAGE = require("../../../resources/userBG.png");
-const IMAGE_HERO = require("../../../resources/categories/buddy-bouncy-normal.png");
+// const BG_IMAGE = require("../../../resources/userBG.png");
+// const IMAGE_HERO = require("../../../resources/categories/buddy-bouncy-normal.png");
 
 const styles = StyleSheet.create({
   mainListContainer:{
@@ -139,8 +139,8 @@ class Search extends Component {
               onPress={() => Actions.chooseProfile()}
             >
               <View style={styles.imageWr}>
-                <Image source={BG_IMAGE} style={styles.itemImgBg} />
-                <Image source={IMAGE_HERO} style={styles.itemImg} />
+                {/*<Image source={BG_IMAGE} style={styles.itemImgBg} />*/}
+                {/*<Image source={IMAGE_HERO} style={styles.itemImg} />*/}
               </View>
               <View style={ styles.underButtonTextWr }>
                 {/*<Text style={ styles.underText }>{item.text.slice(0, -1)}</Text>*/}

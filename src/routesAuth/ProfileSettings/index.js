@@ -13,9 +13,9 @@ import {
   ScrollView
 } from "react-native";
 
-const BG_IMAGE = require("../../../resources/userBG.png");
-const NAV_OK = require("../../../resources/nav-ok.png");
-const empty_IMAGE = require("../../../resources/emptyButton.png");
+// const BG_IMAGE = require("../../../resources/userBG.png");
+// const NAV_OK = require("../../../resources/nav-ok.png");
+// const empty_IMAGE = require("../../../resources/emptyButton.png");
 const styles = StyleSheet.create({
   mainListContainer:{
     alignItems: 'center',
@@ -316,16 +316,16 @@ class ProfileSettings extends Component {
       <View style={{flex: 1, backgroundColor: '#FFF', alignItems: 'center'}}>
         <ScrollView style={styles.containerScroll}>
           <View style={styles.listContainer}>
-            {
-              nameProfile.length > 0 && (
-                <View style={styles.item}>
-                  <View style={styles.imageWr}>
-                    <Image source={BG_IMAGE} style={styles.itemImgBg}/>
-                    <Image source={imageCategory || ''} style={styles.itemImg}/>
-                  </View>
-                </View>
-              )
-            }
+            {/*{*/}
+              {/*nameProfile.length > 0 && (*/}
+                {/*<View style={styles.item}>*/}
+                  {/*<View style={styles.imageWr}>*/}
+                    {/*<Image source={BG_IMAGE} style={styles.itemImgBg}/>*/}
+                    {/*<Image source={imageCategory || ''} style={styles.itemImg}/>*/}
+                  {/*</View>*/}
+                {/*</View>*/}
+              {/*)*/}
+            {/*}*/}
             <View style={styles.formWr}>
               <View style={styles.inputWr}>
                 <TextInput
@@ -335,11 +335,11 @@ class ProfileSettings extends Component {
                   onFocus={() => this.setState({inputActive: true, text: '', touched: true})}
                   value={this.state.profileName}
                 />
-                {
-                  this.state.profileName.length > 0 && (
-                    <Image source={NAV_OK} style={styles.validateChecker}/>
-                  )
-                }
+                {/*{*/}
+                  {/*this.state.profileName.length > 0 && (*/}
+                    {/*<Image source={NAV_OK} style={styles.validateChecker}/>*/}
+                  {/*)*/}
+                {/*}*/}
               </View>
               <View style={styles.inputWr}>
                 <TextInput
@@ -349,11 +349,11 @@ class ProfileSettings extends Component {
                   //onFocus={() => this.setState({inputActive: true, text: '', touched: true})}
                   value={this.state.profileBirthday}
                 />
-                {
-                  this.state.profileBirthday.length > 0 && (
-                    <Image source={NAV_OK} style={styles.validateChecker}/>
-                  )
-                }
+                {/*{*/}
+                  {/*this.state.profileBirthday.length > 0 && (*/}
+                    {/*<Image source={NAV_OK} style={styles.validateChecker}/>*/}
+                  {/*)*/}
+                {/*}*/}
               </View>
 
               <View style={styles.genderWrapper}>
@@ -466,7 +466,7 @@ class ProfileSettings extends Component {
       <View style={styles.itemContainer}>
         <TouchableOpacity onPress={() => {this.changeSelectedChanel(item.nameChannel, item.bgColor)}}>
           {/*<Image source={empty_IMAGE} style={styles.listImageBg} />*/}
-          <Image source={source} style={styles.listImage} />
+          {/*<Image source={source} style={styles.listImage} />*/}
         </TouchableOpacity>
       </View>
     )
