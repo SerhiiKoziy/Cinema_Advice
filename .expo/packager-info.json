@@ -1,5 +1,9 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 16720
+  "packagerPid": 84262,
+  "devToolsPort": 19002,
+  "expoServerNgrokUrl": "https://tt-2b9.serhiikoziy.cinema-advice.exp.direct",
+  "packagerNgrokUrl": "https://packager.tt-2b9.serhiikoziy.cinema-advice.exp.direct",
+  "ngrokPid": 18952
 }

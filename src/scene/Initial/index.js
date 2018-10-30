@@ -15,14 +15,14 @@ import {
 } from "react-native";
 import ApiData from "../../api/api";
 import MainCarousel from "./MainCarousel";
-import ListAnimals from "./ListAnimals";
-import ListChanel from "./ListChanel";
-import ListHeroes from "./MainSlider";
+// import ListAnimals from "./ListAnimals";
+// import ListChanel from "./ListChanel";
+// import ListHeroes from "./MainSlider";
 import ListNews from "./ListNews";
 import PromoBanner from "./PromoBanner";
 import LogoBanner from "./LogoBanner";
-import HeroBanner from "./HeroeBanner";
-import Loading from "../../components/loading.js";
+// import HeroBanner from "./HeroeBanner";
+// import Loading from "../../components/loading.js";
 
 import { ONE_SCREEN } from "../../constants/index.js";
 
@@ -68,6 +68,7 @@ class Home extends Component {
     console.log('item', item);
     //Actions.film_description({filmDescription: item})
   }
+
   render() {
     const {bestFilmsByYear} = this.props.data;
     return (
@@ -80,7 +81,7 @@ class Home extends Component {
                 openDescriptionFilm ={(item) => this.openDescriptionFilm(item)}
                 bestFilmsByYear={bestFilmsByYear}
               />
-              {/*<LogoBanner/>*/}
+              <LogoBanner/>
               {/*<ListHeroes*/}
               {/*listHeroes={dataHeroes}*/}
               {/*tapAction={(channelName, episodeName, bgColor) => this.changeSelectedEpisode(channelName, episodeName, bgColor)}*/}

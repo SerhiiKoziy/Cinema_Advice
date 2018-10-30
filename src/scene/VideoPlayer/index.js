@@ -12,7 +12,7 @@ import {
 } from "react-native";
 
 import Video from 'react-native-video';
-import Orientation from 'react-native-orientation';
+// import Orientation from 'react-native-orientation';
 import { Actions } from 'react-native-router-flux';
 
 import LightVideo from "../../../resources/video/video.mp4";
@@ -281,7 +281,7 @@ function secondsToTime(time) {
     this.animatedValue = new Animated.Value(0);
   }
   componentWillMount(){
-    Orientation.lockToLandscape();
+    // Orientation.lockToLandscape();
   }
   componentDidMount(){
      setTimeout(() =>{
@@ -290,7 +290,7 @@ function secondsToTime(time) {
      }, 5000);
   }
   componentWillUnmount() {
-    Orientation.lockToPortrait();
+    // Orientation.lockToPortrait();
     //Orientation.removeOrientationListener(this._orientationDidChange);
   }
   handleMainButtonTouch = () => {

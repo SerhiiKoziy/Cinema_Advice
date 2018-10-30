@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
 import {Actions, Scene, Router, Tabs, Stack} from 'react-native-router-flux';
 
-import Categories from './components/Categories.js';
+//react-native-router-fluximport Categories from './components/Categories.js';
 import Home from './scene/Initial';
 import Search from './scene/Search';
 import Genres from './scene/Genres';
-import Episodes from './scene/Episodes';
-import ShowPage from './scene/ShowPage';
-import FilmDescription from './scene/FilmDescription';
-import VideoPlayer from './scene/VideoPlayer';
+// import Episodes from './scene/Episodes';
+// import ShowPage from './scene/ShowPage';
+// import FilmDescription from './scene/FilmDescription';
+// import VideoPlayer from './scene/VideoPlayer';
 import CustomNavBar from './components/CustomNavBar.js';
 import CustomNavBarSearch from './components/CustomNavBarSearch.js';
-import CustomNavBarSimple from './components/CustomNavBarSimple.js';
+// import CustomNavBarSimple from './components/CustomNavBarSimple.js';
 import TabComponent from './components/TabComponent.js';
 
 
@@ -30,7 +30,7 @@ export default class RoutingMainApplication extends PureComponent {
 
   render() {
     return(
-      <Router type='replace'>
+      <Router>
         <Scene key="modal"  initial>
           <Stack
             key="root"
@@ -43,7 +43,7 @@ export default class RoutingMainApplication extends PureComponent {
                 showLabel={false}
                 gestureEnabled={false}
                 swipeEnabled={false}
-               // tabBarOnPress={this.props.onTabPress}
+                // tabBarOnPress={this.props.onTabPress}
                 activeBackgroundColor= {THREE_DENIM}
                 inactiveBackgroundColor= {TWO_STEEL}
                 //tabBarComponent={CustomTabBar}
@@ -91,23 +91,22 @@ export default class RoutingMainApplication extends PureComponent {
                   {/*/>*/}
                 </Stack>
 
-                {/*<Stack key="tab_2" iconName="bars" icon={TabComponent} duration={null}>*/}
-                  {/*<Scene*/}
-                    {/*key="genres"*/}
-                    {/*component={Genres}*/}
-                    {/*//title='Channels'*/}
-                    {/*navBar={CustomNavBar}*/}
-                  {/*/>*/}
-
-                {/*</Stack>*/}
-                {/*<Stack key="tab_3" iconName="search" icon={TabComponent} duration={null}>*/}
-                  {/*<Scene*/}
-                      {/*key="search2"*/}
-                      {/*component={Search}*/}
-                      {/*title="Search"*/}
-                      {/*navBar={CustomNavBarSearch}*/}
-                  {/*/>*/}
-                {/*</Stack>*/}
+                <Stack key="tab_2" iconName="bars" icon={TabComponent} duration={null}>
+                  <Scene
+                    key="genres"
+                    component={Genres}
+                    //title='Channels'
+                    navBar={CustomNavBar}
+                  />
+                </Stack>
+                <Stack key="tab_3" iconName="search" icon={TabComponent} duration={null}>
+                  <Scene
+                      key="search2"
+                      component={Search}
+                      title="Search"
+                      navBar={CustomNavBarSearch}
+                  />
+                </Stack>
                 {/*<Stack key="tab_4" iconName="" icon={TabComponent} duration={null}>*/}
                   {/*<Scene*/}
                     {/*key="search3"*/}

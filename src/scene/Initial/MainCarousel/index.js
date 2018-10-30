@@ -14,7 +14,7 @@ import {
   Text
 } from "react-native";
 import { TWO_STEEL, THREE_DENIM } from "../../../constants/index.js";
-const BTN_BLUE = require("../../../../resources/btn-blue.png");
+// const BTN_BLUE = require("../../../../resources/btn-blue.png");
 
 const styles = StyleSheet.create({
   mainListContainer:{
@@ -97,8 +97,6 @@ class MainCarousel extends Component {
     };
   }
 
-  componentDidMount() {
-  }
   renderItem ({item, index}) {
     /*
       { vote_count: 10,
@@ -118,40 +116,40 @@ class MainCarousel extends Component {
     */
     const baseImageUrl = 'http://image.tmdb.org/t/p/w185/';
 
-    let source = {uri: `${baseImageUrl}${item.poster_path}`};
+    // let source = {uri: `${baseImageUrl}${item.poster_path}`};
     let width = Dimensions.get('window').width - 140;
     return (
       <View style={[styles.slide, {width: width}]}>
         <Text style={[styles.slideTitle, {width: width}]}>{item.title}</Text>
-        <Image source={source} style={styles.slideImage}/>
+        {/*<Image source={source} style={styles.slideImage}/>*/}
       </View>
     );
   }
   render() {
     const {bestFilmsByYear} = this.props;
-    let width = Dimensions.get('window').width;
+    //let width = Dimensions.get('window').width;
     return (
       <View style={styles.mainListContainer}>
         <View style={styles.containerScroll}>
           <View style={styles.listContainer}>
-              {
-                  bestFilmsByYear.results && bestFilmsByYear.results.length > 0 && (
-                      <Carousel
-                          ref={c => {this._carousel = c}}
-                          data={bestFilmsByYear.results}
-                          renderItem={this.renderItem}
-                          sliderWidth={width}
-                          itemWidth={width - 140}
-                          loop = {true}
-                          onSnapToItem={(index) => this.setState({ sliderActiveSlide: index })}
-                      />
-                  )
-              }
+              {/*{*/}
+                  {/*bestFilmsByYear.results && bestFilmsByYear.results.length > 0 && (*/}
+                      {/*<Carousel*/}
+                          {/*ref={c => {this._carousel = c}}*/}
+                          {/*data={bestFilmsByYear.results}*/}
+                          {/*renderItem={this.renderItem}*/}
+                          {/*sliderWidth={width}*/}
+                          {/*itemWidth={width - 140}*/}
+                          {/*loop = {true}*/}
+                          {/*onSnapToItem={(index) => this.setState({ sliderActiveSlide: index })}*/}
+                      {/*/>*/}
+                  {/*)*/}
+              {/*}*/}
 
             <View style={styles.buttonAddSubmitWr}>
               <TouchableOpacity
                 style={styles.buttonAddSubmit}
-                onPress={() => this.props.openDescriptionFilm(bestFilmsByYear.results[this.state.sliderActiveSlide])}
+                // onPress={() => this.props.openDescriptionFilm(bestFilmsByYear.results[this.state.sliderActiveSlide])}
               >
                 <Text style={styles.buttonAddSubmitText}>This film</Text>
               </TouchableOpacity>

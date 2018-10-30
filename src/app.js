@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import configureStore from './constants/configureStore';
 import { saveNameSelectTab } from './actions/index.js';
 const { store } = configureStore();
-import RoutingMainApplication from './routingMainApplication.js';
-//import RoutingAuth from './routingAuth.js';
+// import RoutingMainApplication from './routingMainApplication.js';
+import RoutingMainApplication from './routingAuth.js';
 
 import {Actions} from 'react-native-router-flux';
 
@@ -51,6 +51,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-

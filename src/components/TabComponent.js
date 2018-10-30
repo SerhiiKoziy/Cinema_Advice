@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, View, TouchableOpacity, StyleSheet, Image, Animated} from "react-native";
 import { connect } from 'react-redux';
-//import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { FOUR_MARIGOLD, BG_COLOR_DESIGN } from "../constants/index.js";
 import {Actions} from 'react-native-router-flux';
 import {
@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
       <View style={[styles.tabBarWr, {backgroundColor: BG_COLOR_DESIGN}]}>
         <View style={ styles.itemContainerSec}>
           <View style={styles.itemImageWr}>
-            <Text style={{color: colorIcon}}>M</Text>
-            {/*<Icon style={{color: colorIcon}} name={this.props.iconName || "circle"} size={27}/>*/}
+            {/*<Text style={{color: colorIcon}}>{this.props.iconName}</Text>*/}
+            <Icon style={{color: colorIcon}} name={this.props.iconName || "circle"} size={27}/>
           </View>
         </View>
       </View>

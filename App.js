@@ -3,9 +3,12 @@ import { Provider } from 'react-redux';
 
 import configureStore from './src/constants/configureStore';
 import { saveNameSelectTab } from './src/actions/index.js';
+
 const { store } = configureStore();
-//import RoutingMainApplication from './src/routingMainApplication.js';
-//import RoutingAuth from './routingAuth.js';
+
+import {View} from "react-native";
+// import RoutingMainApplication from './src/routingMainApplication.js';
+import RoutingMainApplication from './src/routingAuth.js';
 
 import Actions from 'react-native-router-flux';
 
@@ -13,14 +16,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      font: true
+      font: false
     };
   }
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      //'FontAwesome': require( './resources/fonts/FontAwesome.ttf'),
+      'FontAwesome': require( './resources/fonts/FontAwesome.ttf'),
     });
-    this.setState({ font: true });
+    await this.setState({ font: true });
   }
   onTabPress(scene) {
     let tabName = scene.scene.route.key;
@@ -48,13 +51,20 @@ export default class App extends React.Component {
   }
   render(){
     const { channelNameFirstTab } = store.getState().data.dataSelectedSerialsFirstTab;
+    console.log('this.state.font', this.state.font)
     return (
       <Provider store={store}>
-          <div></div>
-        {/*<RoutingMainApplication*/}
-          {/*channelNameFirstTab={channelNameFirstTab}*/}
-         {/*// onTabPress = {this.onTabPress.bind(this)}*/}
-        {/*/>*/}
+        {
+          this.state.font ? (
+            <RoutingMainApplication
+              channelNameFirstTab={channelNameFirstTab}
+              // onTabPress = {this.onTabPress.bind(this)}
+            />
+          ) : (
+            <View>{'Please wait...'}</View>
+          )
+        }
+
       </Provider>
     )
   }
